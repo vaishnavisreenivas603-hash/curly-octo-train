@@ -3,88 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Happy Birthday Ammulu! ✨</title>
     <style>
-    
+        :root {
+            --primary-pink: #ffafbd;
+            --soft-white: #fffafa;
+            --accent-gold: #ffd700;
+        }
+
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+
         body {
-            background-color: #f0f8ff;
+            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Updated to a premium diagonal gradient */
+            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+            color: #444;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
             display: flex;
             justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ff69b4;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
+            padding: 80px 20px 20px;
             text-align: center;
         }
 
-        .container {
-            background: white;
-            padding: 2rem;
+        .card {
+            background: var(--soft-white);
+            padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-width: 600px;
+            width: 100%;
         }
 
-        h1 { color: #ff69b4; margin-bottom: 10px; }
-        p { color: #555; line-height: 1.6; }
+        h1 { color: #d63384; font-size: 2.5rem; }
+        p { line-height: 1.6; font-size: 1.1rem; }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-placeholder {
+            background: #ffe4e1;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ffb6c1;
+            color: #ff69b4;
+            font-size: 0.9rem;
+            overflow: hidden; /* Keeps images inside the rounded corners */
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         .btn {
             background: #ff69b4;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 12px 25px;
+            border-radius: 30px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: transform 0.2s;
+            margin-top: 20px;
+            transition: 0.3s;
+            font-weight: bold;
         }
 
-        .btn:hover { transform: scale(1.1); }
+        .btn:hover { transform: scale(1.05); background: #e05297; }
 
-        /* Confetti animation */
-        .confetti {
-            position: absolute;
-            width: 10px; height: 10px;
-            background: #ffd700;
-            top: -10px;
-            border-radius: 50%;
-            animation: fall 3s linear infinite;
+        /* Added Bouncing Animation for Emojis */
+        .bounce-emoji {
+            display: inline-block;
+            font-size: 3rem;
+            margin: 10px;
+            animation: bounce 2s infinite ease-in-out;
         }
 
-        @keyframes fall {
-            to { transform: translateY(100vh) rotate(360deg); }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
+
+        footer { padding: 20px; font-size: 0.8rem; color: white; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1 id="title">Click to Reveal! 🎁</h1>
-        <p id="message">I have a special message for you...</p>
-        <button class="btn" onclick="revealBirthday()">Open Gift</button>
-    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#memories">Memories</a>
+        <a href="#letter">The Letter</a>
+    </nav>
+
+    <section id="home">
+        <div class="card">
+            <h1>Happy Birthday, Ammulu! 🎂</h1>
+            <p>Welcome to your digital birthday surprise. You've been my best friend since school, and I wanted to make something unique just for you! ✨</p>
+            <button class="btn" onclick="location.href='#memories'">See Our Memories →</button>
+        </div>
+    </section>
+
+    <section id="memories">
+        <div class="card">
+            <h1>Memory Lane 📸</h1>
+            <p>Every moment with you is aesthetic and special.</p>
+            <div class="gallery">
+                <div class="photo-placeholder">
+                    <img src="school.jpg" alt="School Days">
+                </div>
+                <div class="photo-placeholder">
+                    <img src="jokes.jpg" alt="Inside Jokes">
+                </div>
+                <div class="photo-placeholder">
+                    <img src="besties.jpg" alt="Besties Forever">
+                </div>
+                <div class="photo-placeholder">
+                    <img src="bday.jpg" alt="Birthday Vibes">
+                </div>
+            </div>
+            <button class="btn" onclick="location.href='#letter'">Read My Note →</button>
+        </div>
+    </section>
+
+    <section id="letter">
+        <div class="card">
+            <h1>For My Bestie, Mythri 💌</h1>
+            <p>Ammulu, thank you for being the most supportive friend. Whether it's college stress or celebrating wins, I'm so glad we're in this together. Have the most wonderful year ahead!</p>
+            
+            <div class="bounce-emoji">🎁</div>
+            <div class="bounce-emoji" style="animation-delay: 0.2s;">🎈</div>
+            <div class="bounce-emoji" style="animation-delay: 0.4s;">✨</div>
+            
+            <p><em>With love, Vaishu</em></p>
+            
+            <button class="btn" onclick="celebrate()">Click for a Surprise! 🎉</button>
+        </div>
+        <footer>Made with 💖 by Vaishu</footer>
+    </section>
 
     <script>
-      
-        function revealBirthday() {
-            document.getElementById('title').innerText = "Happy Birthday!";
-            document.getElementById('message').innerHTML = "Wishing you a day filled with love and laughter. <br> You are amazing! ✨";
-            
-           
-            for(let i=0; i<50; i++) {
-                createConfetti();
-            }
-        }
-
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            confetti.style.left = Math.random() * 100 + "vw";
-            confetti.style.animationDuration = (Math.random() * 2 + 3) + "s";
-            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-            document.body.appendChild(confetti);
+        function celebrate() {
+            alert("HAPPY BIRTHDAY MYTHRI! 🎂✨ You are officially the best bestie ever. Hope your day is as amazing as you are!");
         }
     </script>
+
 </body>
 </html>
